@@ -15,7 +15,7 @@ export async function handleSubmission(formdata: FormData){
     const content = formdata.get('content');
     const url = formdata.get('url');
 
-    const data = await prisma.blogPost.create({
+    await prisma.blogPost.create({
         data: {
             title: title as string,
             content: content as string,
