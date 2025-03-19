@@ -2,6 +2,7 @@ import BlogPostCard from "@/components/general/BlogPostCard";
 import { prisma } from "./utils/db";
 import { Suspense } from "react";
 
+export const revalidate = 60;
 async function getdata() {
   const items = await prisma.blogPost.findMany({
     select: {
